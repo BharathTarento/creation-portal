@@ -1,0 +1,179 @@
+<div class="ui container">
+    <div class="sb-pageSection mt-24 pb-48">
+        <div class="ui segment mt-5">
+            <form class="ui form sb-dock-radio-disable">
+                <div class="ui grid">
+                    <div class="four wide column">
+                        <div class="required field">
+                            <label class="d-block">{{resource?.frmelmnts?.lbl?.blueprintName}}
+                                <i class="pull-right question circle link icon pull-right" suiPopup popupDelay="500"
+                                    [popupPlacement]="'left'"
+                                    popupText="{{resource?.frmelmnts?.lbl?.blueprintName}}"></i>
+                            </label>
+                            <div class="sb-field">
+                                <input autofocus="" class="sb-form-control ng-pristine ng-valid ng-touched" type="text"
+                                    placeholder="{{resource?.frmelmnts?.lbl?.blueprintName}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="four wide column">
+                        <div class="required field w-100">
+                            <label class="d-block">{{resource?.frmelmnts?.lbl?.selectAssesmentType}}
+                              <i class="pull-right question circle link icon pull-right" suiPopup
+                                 popupDelay="500" [popupPlacement]="'left'"
+                                 popupText="{{resource?.frmelmnts?.lbl?.selectAssesmentType}}"></i>
+                            </label>
+                            <sui-select class="selection" >
+          <sui-select-option *ngFor="let option of [1,2,3]" [value]="option"></sui-select-option>
+        </sui-select>
+                          </div>
+                    </div>
+                    <div class="four wide column">
+                        <div class="required field w-100">
+                            <label class="d-block">{{resource?.frmelmnts?.lbl?.selectPosition}}
+                              <i class="pull-right question circle link icon pull-right" suiPopup
+                                 popupDelay="500" [popupPlacement]="'left'"
+                                 popupText="{{resource?.frmelmnts?.lbl?.selectPosition}}"></i>
+                            </label>
+                            <sui-multi-select class="w-100 selection max-h-375" [options]="[0,1,2]" #multiSelect>
+                              <sui-select-option *ngFor="let option of [0,1,2]" [value]="option">
+                              </sui-select-option>
+                            </sui-multi-select>
+                          </div>
+                    </div>
+                    <div class="twelve wide column">
+                        <div class="required field">
+                            <label class="d-block">{{resource?.frmelmnts?.lbl?.description}}
+                                <i class="pull-right question circle link icon pull-right" suiPopup popupDelay="500"
+                                    [popupPlacement]="'left'"
+                                    popupText="{{resource?.frmelmnts?.lbl?.description}}"></i>
+                            </label>
+                            <div class="sb-field">
+                                <textarea rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="twelve wide column">
+                        <div class="required field">
+                            <label class="d-block">{{resource?.frmelmnts?.lbl?.instructionsForCandidates}}
+                                <i class="pull-right question circle link icon pull-right" suiPopup popupDelay="500"
+                                    [popupPlacement]="'left'"
+                                    popupText="{{resource?.frmelmnts?.lbl?.instructionsForCandidates}}"></i>
+                            </label>
+                            <div class="sb-field">
+                                <textarea rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <ng-container>
+                        <div class="twelve wide column">
+                            <div class="d-flex flex-as-center flex-jc-space-between">
+                                <h4>{{resource?.frmelmnts?.lbl?.addCompetencySection}}</h4>
+                                <button class="sb-btn sb-btn-normal sb-btn-outline-primary mr-20">{{resource?.frmelmnts?.lbl?.addAnotherCompetency}}</button>
+                            </div>
+                        </div>
+                        <div class="three wide column">
+                            <div class="required field w-100">
+                                <label class="d-block">{{resource?.frmelmnts?.lbl?.selectCompetency}}
+                                  <i class="pull-right question circle link icon pull-right" suiPopup
+                                     popupDelay="500" [popupPlacement]="'left'"
+                                     popupText="{{resource?.frmelmnts?.lbl?.selectCompetency}}"></i>
+                                </label>
+                                <sui-multi-select class="w-100 selection max-h-375" [options]="[0,1,2]" #multiSelect>
+                                  <sui-select-option *ngFor="let option of [0,1,2]" [value]="option">
+                                  </sui-select-option>
+                                </sui-multi-select>
+                              </div>
+                        </div>
+                        <div class="two wide column">
+                            <div class="required field">
+                                <label class="d-block">{{resource?.frmelmnts?.lbl?.competencyLevel}}
+                                    <i class="pull-right question circle link icon pull-right" suiPopup popupDelay="500"
+                                        [popupPlacement]="'left'"
+                                        popupText="{{resource?.frmelmnts?.lbl?.competencyLevel}}"></i>
+                                </label>
+                                <sui-multi-select class="w-100 selection max-h-375" [options]="[0,1,2]" #multiSelect>
+                                    <sui-select-option *ngFor="let option of [0,1,2]" [value]="option">
+                                    </sui-select-option>
+                                  </sui-multi-select>
+                            </div>
+                        </div>
+                        <div class="two wide column">
+                            <div class="required field">
+                                <label class="d-block">{{resource?.frmelmnts?.lbl?.selectQuestionType}}
+                                    <i class="pull-right question circle link icon pull-right" suiPopup popupDelay="500"
+                                        [popupPlacement]="'left'"
+                                        popupText="{{resource?.frmelmnts?.lbl?.selectQuestionType}}"></i>
+                                </label>
+                                <sui-multi-select class="w-100 selection max-h-375" [options]="[0,1,2]" #multiSelect>
+                                    <sui-select-option *ngFor="let option of [0,1,2]" [value]="option">
+                                    </sui-select-option>
+                                  </sui-multi-select>
+                            </div>
+                        </div>
+                        <div class="two wide column">
+                            <div class="required field">
+                                <label class="d-block">{{resource?.frmelmnts?.lbl?.availableQuestions}}
+                                    <i class="pull-right question circle link icon pull-right" suiPopup popupDelay="500"
+                                        [popupPlacement]="'left'"
+                                        popupText="{{resource?.frmelmnts?.lbl?.availableQuestions}}"></i>
+                                </label>
+                                <div class="sb-field">
+                                    <input autofocus="" class="sb-form-control ng-pristine ng-valid ng-touched disabled" disabled type="text"
+                                        placeholder="{{resource?.frmelmnts?.lbl?.availableQuestions}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="two wide column">
+                            <div class="required field">
+                                <label class="d-block">{{resource?.frmelmnts?.lbl?.requiredQuestions}}
+                                    <i class="pull-right question circle link icon pull-right" suiPopup popupDelay="500"
+                                        [popupPlacement]="'left'"
+                                        popupText="{{resource?.frmelmnts?.lbl?.requiredQuestions}}"></i>
+                                </label>
+                                <div class="sb-field">
+                                    <input autofocus="" class="sb-form-control ng-pristine ng-valid ng-touched" type="text"
+                                        placeholder="{{resource?.frmelmnts?.lbl?.requiredQuestions}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="one wide column d-flex flex-as-center flex-jc-flex-end">
+                            <div  class="px-0 d-inline-block">
+                                <div class="sb-dock-icon-tooltip d-inline-block">
+                                        <i class="icon trash sb-color-primary cursor-pointer ui fs-0-785 va-text-sup ml-5" data-tooltip="Delete"
+                                       ></i>
+                                     
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="twelve wide column">
+                            <div class="required field">
+                                <label class="d-block">{{resource?.frmelmnts?.lbl?.name}}
+                                    <i class="pull-right question circle link icon pull-right" suiPopup popupDelay="500"
+                                        [popupPlacement]="'left'"
+                                        popupText="{{resource?.frmelmnts?.lbl?.programNameHint}}"></i>
+                                </label>
+                                <div class="sb-field">
+                                    <input autofocus="" class="sb-form-control ng-pristine ng-valid ng-touched" type="text"
+                                        placeholder="{{resource?.frmelmnts?.lbl?.programNameHint}}">
+                                </div>
+                            </div>
+                        </div> -->
+                    </ng-container>
+                    <hr class="w-100">
+                    <div class="twelve wide column">
+                        <div class="d-flex flex-as-center flex-jc-space-between">
+                            <div>
+                                <button class="sb-btn sb-btn-normal sb-btn-outline-primary mr-20" (click)="bluePrintCreate('close')">{{resource?.frmelmnts?.btn?.close}}</button>
+                            </div>
+                            <div>
+                                <button class="sb-btn sb-btn-normal sb-btn-outline-primary mr-20" (click)="bluePrintCreate('draft')">{{resource?.frmelmnts?.btn?.saveAsDraft}}</button>
+                                <button class="sb-btn sb-btn-normal sb-btn-primary" (click)="bluePrintCreate('publish')">{{resource?.frmelmnts.btn.publishToConsume}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

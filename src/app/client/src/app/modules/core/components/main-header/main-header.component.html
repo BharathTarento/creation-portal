@@ -25,6 +25,13 @@
                     [telemetryInteractCdata]="telemetryInteractCdata"
                     [telemetryInteractPdata]="telemetryInteractPdata">
             <i class="plus outline icon"></i> {{resourceService?.frmelmnts?.lbl?.createNewProgram}}</button>
+            <button routerLink="sourcing/blueprint/create-blueprint" class="px-10 sb-btn sb-btn-normal sb-btn-outline-primary ml-15" *ngIf="sourcingOrgAdmin && this.router.url.includes('/sourcing') && !this.router.url.includes('sourcing/blueprint/create-blueprint') && !this.router.url.includes('sourcing/help')"
+            appTelemetryInteract
+            [telemetryInteractEdata]="getTelemetryInteractEdata('create_new_project',config.telemetryLabels.eventType.click,config.telemetryLabels.eventSubtype.launch ,pageId)"
+            [telemetryInteractObject]="telemetryInteractObject"
+            [telemetryInteractCdata]="telemetryInteractCdata"
+            [telemetryInteractPdata]="telemetryInteractPdata">
+    <i class="plus outline icon"></i> {{resourceService?.frmelmnts?.lbl?.createNewBluePrint}}</button>
                 <div class="item flex-jc-flex-end" *ngIf="router.url.includes('/sourcing') && userProfile?.organisationNames?.length">
                     <span> {{ resourceService?.frmelmnts?.lbl?.organisation + ' : ' }} </span>
                     <span class="pl-5 font-weight-bold"> {{ userProfile?.organisationNames?.join(', ') }} </span>
@@ -131,6 +138,12 @@
       [telemetryInteractObject]="telemetryInteractObject"
       [telemetryInteractCdata]="telemetryInteractCdata"
       [telemetryInteractPdata]="telemetryInteractPdata">{{ resourceService?.frmelmnts?.lbl?.myPrograms }}</a>
+      <a routerLink="sourcing/blueprint/blueprint-list" *ngIf="router.url.includes('/sourcing') && !router.url.includes('/sourcing/help')"  [class.active]="activeTab['blueprint']" (click)="handleActiveTabState('blueprint')"
+                    appTelemetryInteract
+      [telemetryInteractEdata]="getTelemetryInteractEdata('my_programs', config.telemetryLabels.eventType.click,config.telemetryLabels.eventSubtype.launch ,pageId)"
+      [telemetryInteractObject]="telemetryInteractObject"
+      [telemetryInteractCdata]="telemetryInteractCdata"
+      [telemetryInteractPdata]="telemetryInteractPdata"><span class="sb-color-white">{{ resourceService?.frmelmnts?.lbl?.blueprint }}</span></a>
                     <ng-container *ngIf="userService.userRegistryData">
                         <a routerLink="contribute" *ngIf="router.url.includes('/contribute') && !router.url.includes('/contribute/help') && programsService.checkforshowAllPrograms()"  [class.active]="activeTab['allPrograms']" (click)="handleActiveTabState('allPrograms')"
                     appTelemetryInteract
@@ -139,7 +152,13 @@
       [telemetryInteractCdata]="telemetryInteractCdata"
       [telemetryInteractPdata]="telemetryInteractPdata"><span class="sb-color-white">{{ resourceService?.frmelmnts?.lbl?.allPrograms }}</span></a>
                     </ng-container>
-                    <a routerLink="contribute/myenrollprograms" *ngIf="router.url.includes('/contribute') && !router.url.includes('/contribute/help')" [class.active]="activeTab['myPrograms']" (click)="handleActiveTabState('myPrograms')"
+                    <a routerLink="contribute/myenrollprograms" *ngIf="router.url.includes('/contribute') && !router.url.includes('/contribute/help')" [class.active]="activeTab['blueprint']" (click)="handleActiveTabState('blueprint')"
+                    appTelemetryInteract
+      [telemetryInteractEdata]="getTelemetryInteractEdata('my_programs', config.telemetryLabels.eventType.click,config.telemetryLabels.eventSubtype.launch ,pageId)"
+      [telemetryInteractObject]="telemetryInteractObject"
+      [telemetryInteractCdata]="telemetryInteractCdata"
+      [telemetryInteractPdata]="telemetryInteractPdata"><span class="sb-color-white">{{ resourceService?.frmelmnts?.lbl?.blueprint }}</span></a>
+      <a routerLink="contribute/myenrollprograms" *ngIf="router.url.includes('/contribute') && !router.url.includes('/contribute/help')" [class.active]="activeTab['myPrograms']" (click)="handleActiveTabState('myPrograms')"
                     appTelemetryInteract
       [telemetryInteractEdata]="getTelemetryInteractEdata('my_programs', config.telemetryLabels.eventType.click,config.telemetryLabels.eventSubtype.launch ,pageId)"
       [telemetryInteractObject]="telemetryInteractObject"

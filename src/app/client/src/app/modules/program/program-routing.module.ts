@@ -84,6 +84,9 @@ const routes: Routes = [{
     pageid: telemetryPage.pageId.sourcing.help  }
   },
 },
+{
+  path: 'blueprint', loadChildren: () => import('app/modules/blue-print/blue-print.module').then(m => m.BluePrintModule)
+},
 ];
 
 @NgModule({
