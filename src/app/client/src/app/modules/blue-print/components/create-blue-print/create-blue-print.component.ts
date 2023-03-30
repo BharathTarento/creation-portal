@@ -17,5 +17,6 @@ export class CreateBluePrintComponent implements OnInit {
   bluePrintCreate(saveType?){
     this.router.navigate(['/sourcing/blueprint/blueprint-list']);
   }
+  
 
 }
