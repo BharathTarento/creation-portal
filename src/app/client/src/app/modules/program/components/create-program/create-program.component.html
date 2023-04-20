@@ -679,7 +679,7 @@
                               <div class="collection-add__no-result flex-dc flex-ai-jc-center">
                                 <h6 class="font-weight-bold">{{resource.frmelmnts.lbl.noCollectionsAddedToProject | interpolate: '{TARGET_OBJECT_TYPE}': projectScopeForm.value.target_collection_category }}</h6>
                                 <img alt="No Content available" class="mt-16" src="assets/images/offline-desktop.svg">
-                                <button class="sb-btn sb-btn-secondary sb-btn-normal my-10" (click)="initiateCollectionEditor()">{{resource.frmelmnts.lbl.addNewTargetObject}}</button>
+                                <button class="sb-btn sb-btn-secondary sb-btn-normal my-10" (click)="initiateCollectionEditor()">{{resource.frmelmnts.lbl.addNewTargetObject | interpolate: '{TARGET_OBJECT_TYPE}': projectScopeForm.value.target_collection_category}}</button>
                               </div>
                             </div>
                           </div>
