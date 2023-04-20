@@ -21,7 +21,11 @@ export class CreateBluePrintComponent implements OnInit {
   public formIsInvalid = false;
   public showLoader = false;
   public frameworkCategories;
-  public frameworkValues={}
+  public frameworkValues={
+    "board":{
+      terms:{}
+    }
+  }
   constructor(public resource:ResourceService,public router: Router,private sbFormBuilder: FormBuilder,private browserCacheTtlService: BrowserCacheTtlService,public frameworkService:FrameworkService,public userService: UserService,public configService:ConfigService,public cacheService:CacheService,public learnerService:LearnerService,public programsService:ProgramsService,public contentService:ContentService) { }
 
   ngOnInit(): void {
